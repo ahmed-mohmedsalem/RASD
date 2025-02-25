@@ -303,3 +303,7 @@
 .footer .links span:last-of-type i {
   color: #ff182bde;
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: #068515;
+}
