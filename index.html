@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/rasd.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   </head>
-  <body>
+  <body id="app">
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <h1 style="margin: 0">
@@ -18,7 +18,11 @@
           ><span style="color: #08c108">S</span
           ><span style="color: #fff">D</span>
         </h1>
-        <button
+        <div>
+          <button class="btn lg" type="button">
+            <a href="#" @click="setLanguage()">🌐{{currentLang}}</a>
+          </button>
+          <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -47,6 +51,8 @@
             </li>
           </ul>
         </div>
+        </div>
+        
       </div>
     </nav>
     <div class="home" id="home">
@@ -58,7 +64,7 @@
         <i class="fa-solid fa-star-and-crescent"></i>
       </div>
       <div class="content container pt-5 text-center">
-        <h2 style="color: #08c108">Western Sahara</h2>
+        <h2 style="color: #08c108">{{ t('welcomeh') }}</h2>
         <p style="color: #7f7f7f">
           this website contain quick information about Western sahara, we hope
           you enjoy it
@@ -67,13 +73,23 @@
         <div class="map col-lg-6">
           <img src="imgs/map1.png" alt="" />
           <h1>27</h1>
+          <h1>1976</h1>
           <h2>February</h2>
           <h2>فبراير</h2>
         </div>
-        <div class="bar">
+        <div V-if="currentLang == 'EN'" class="baren">
+          <div>
           <p>
             The 49th anniversary of proclamation of the Sahrawi Arab Republic
           </p>
+          </div>
+        </div>
+        <div V-else class="barar">
+          <div>
+          <p>
+             الذكرى 49 لاعلان الجمهورية العربية الصحراوية الديمقراطية
+          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -139,75 +155,76 @@
     </div>
     <div class="history container pt-5 text-center" id="history">
       <h2 style="color: #08c108">History</h2>
-      <div class="timeline">
-      <div class="nn">
-        <i class="bi bi-arrow-right" style="font-size: 20px; color: #00ff62;"></i>
-
+      <div class="timeline row">
+      <div class="nn col-sm-12">
         <div class="c">
           <span class="date">1884</span>
           <p><strong>الاستعمار الإسباني للصحراء الغربية</strong><br>في أواخر القرن التاسع عشر، فرضت إسبانيا سيطرتها على المنطقة كجزء من تقسيم القوى الاستعمارية لإفريقيا في مؤتمر برلين (1884-1885).</p>
       </div>
       </div>
-      <div class="nn">
-        <i class="bi bi-arrow-right" style="font-size: 20px; color: #00ff62;"></i>
-
-        <div class="c">
+      <div class="nn col-sm-12">
+        <div  class="c">
           <span class="date">1973</span>
           <p><strong>جبهة تحرير الساقية الحمراء ووادي الذهب</strong><br> بعد الحرب العالمية الثانية، بدأ السكان في المطالبة بالاستقلال، حيث تم تأسيس جبهة  تحرير الساقية الحمراء ووادي الذهب (البوليساريو) 10 ماي عام 1973، التي طالبت بإنهاء الاستعمار</p>
       </div>
       </div>
-      <div class="nn">
-        <i class="bi bi-arrow-right" style="font-size: 20px; color: #00ff62;"></i>
-
+      <div class="nn col-sm-12">
+        
         <div class="c">
           <span class="date">1976</span>
           <p><strong>تأسيس الجمهورية العربية الصحراوية الديمقراطية</strong> <br>بعد انسحاب إسبانيا، وقع المغرب وموريتانيا اتفاق مدريد، حيث تقاسم المغرب وموريتانيا المنطقة، لكن جبهة البوليساريو رفضت ذلك وأعلنت قيام الجمهورية العربية الصحراوية الديمقراطية (RASD) في 27 فبراير 1976</p>
       </div>
       </div>
-      <div class="nn">
-        <i class="bi bi-arrow-right" style="font-size: 20px; color: #00ff62;"></i>
-
+      <div class="nn col-sm-12">
         <div class="c">
           <span class="date">1991-1976</span>
           <p><strong>الصراع المغربي الصحراوي</strong><br>دخل المغرب وجبهة البوليساريو في حرب استمرت حتى 1991، عندما تم توقيع وقف إطلاق النار بوساطة الأمم المتحدة</p>
         </div>
       </div>
-      <div class="nn">
-        <i class="bi bi-arrow-right" style="font-size: 20px; color: #00ff62;"></i>
-
+      <div class="nn col-sm-12">
         <div class="c">
           <span class="date">2025</span>
           <p><strong>الوضع الحالي</strong><br> أصدر زعيم جبهة البوليساريو، إبراهيم غالي، مرسوما يقضي بإنهاء الالتزام باتفاق وقف إطلاق النار الموقع عام 1991 مع المغرب في نوفمبر من سنة 2020 مما أدى الى عودة المواجهة العسكرية بين المغرب والصحراء الغربية والان بعد مرور ما يقارب الخمس سنوات لا يزال الشعب الصحراوي  يلجأ للكفاح المسلح كخيار استراتيجي لمواجهة تعنت جيش الاحتلال المغربي الذي لم يلتزم بقرارات الشرعية الدولية والأممية خلال العقود الثلاثة الأخيرة والتي نصّت على وجوب تمكين شعب الصحراء الغربية من تقرير المصير عبر استفتاء حرّ وعادل ونزيه بإشراف من الأمم المتحدة. </p>
         </div>
       </div>
-
-        
-        
-      
-    
-    
-
     </div>
+    
     
       
     <div class="pic container pt-5 text-center" id="pic">
       <h2 style="color: #08c108">Pictures</h2>
+
+
       <div class="album mt-5 mb-5">
-        <h4 class="mb-3">Culture</h4>
         <div id="carouselExampleFade" class="carousel slide carousel-fade">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="imgs/Western_sahara.png"
+                src="imgs/A1.jpg"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
-              <img src="imgs/bi.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/A2.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
             <div class="carousel-item">
-              <img src="imgs/de.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/A3.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/A4.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/A5.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/A6.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/A7.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/A8.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
           </div>
           <button
@@ -230,28 +247,68 @@
           </button>
         </div>
       </div>
+
+
+
+
       <div class="album mt-5 mb-5">
-        <h4 class="mb-3">Culture</h4>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div id="carouselExampleFade2" class="carousel slide carousel-fade">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="imgs/Western_sahara.png"
+                src="imgs/B5.jpg"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
-              <img src="imgs/bi.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/B4.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
             <div class="carousel-item">
-              <img src="imgs/de.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/B2.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
+            <div class="carousel-item">
+              <img src="imgs/B3.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B7.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B6.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B1.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B8.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B9.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B10.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B11.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B13.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B14.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B15.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/B12.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            
           </div>
           <button
             class="carousel-control-prev"
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExampleFade2"
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -260,7 +317,7 @@
           <button
             class="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExampleFade2"
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -268,28 +325,49 @@
           </button>
         </div>
       </div>
+
+
       <div class="album mt-5 mb-5">
-        <h4 class="mb-3">Culture</h4>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div id="carouselExampleFade4" class="carousel slide carousel-fade">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="imgs/Western_sahara.png"
+                src="imgs/D1.jpg"
                 class="d-block w-100"
                 alt="..."
+                loading="lazy"
               />
             </div>
             <div class="carousel-item">
-              <img src="imgs/bi.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/D2.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
             <div class="carousel-item">
-              <img src="imgs/de.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/D3.jpg" class="d-block w-100" alt="..." loading="lazy" />
             </div>
+            <div class="carousel-item">
+              <img src="imgs/D4.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/D5.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/D6.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/D7.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/D8.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/D9.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            
           </div>
           <button
             class="carousel-control-prev"
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExampleFade4"
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -298,7 +376,7 @@
           <button
             class="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExampleFade4"
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -306,28 +384,66 @@
           </button>
         </div>
       </div>
+
+
+
+
       <div class="album mt-5 mb-5">
-        <h4 class="mb-3">Culture</h4>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div id="carouselExampleFade5" class="carousel slide carousel-fade">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="imgs/Western_sahara.png"
+                src="imgs/E1.jpg"
                 class="d-block w-100"
                 alt="..."
+                loading="lazy"
               />
             </div>
             <div class="carousel-item">
-              <img src="imgs/bi.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/E2.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
             <div class="carousel-item">
-              <img src="imgs/de.jpg" class="d-block w-100" alt="..." />
+              <img src="imgs/E3.jpg" class="d-block w-100" alt="..." loading="lazy"/>
             </div>
+            <div class="carousel-item">
+              <img src="imgs/E4.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E6.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E7.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E8.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E9.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E10.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E11.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E12.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E13.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E14.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/E15.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+            
           </div>
           <button
             class="carousel-control-prev"
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExampleFade5"
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -336,7 +452,7 @@
           <button
             class="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExampleFade5"
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -344,15 +460,103 @@
           </button>
         </div>
       </div>
+
+
+
+
+      <div class="album mt-5 mb-5">
+        <div id="carouselExampleFade3" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="imgs/C1.jpg"
+                class="d-block w-100"
+                alt="..."
+                loading="lazy"
+              />
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/C2.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/C3.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/C4.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/C5.jpg" class="d-block w-100" alt="..." loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="imgs/C6.jpg" class="d-block w-100" alt="..." loading="lazy" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade3"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade3"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+
+
+
+      
     </div>
     <div class="footer pt-3 text-center">
-      <p><span>Total visits</span><span> 214</span></p>
+      <h5>Our social media accounts</h5>
+      <div class="links flex">
+        <span><a href="https://www.facebook.com/share/15sZCcyFFX/?mibextid=qi2Omg" class="col-sm-6"><i class="fa-brands fa-facebook-f"></i></a></span>
+        <span><a href="https://www.instagram.com/annaba_students_23?igsh=MWt0N201cXVwamhoag==" class="col-sm-6"><i class="fa-brands fa-instagram"></i></a></span>
+      </div>
       <div class="foot">
         <p>@copyright 2025 UPMA sahrui students</p>
       </div>
     </div>
-    <script src="js/vue.js"></script>
-    <script src="js/Rasd.js"></script>
+    <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.prod.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+      const { createApp, ref } = Vue;
+  
+      createApp({
+        setup() {
+          const translations = {
+            EN: { 
+              welcomeh: "Western sahara" 
+            },
+            AR: { 
+              welcomeh: "الصحراء الغربية" 
+            }
+          };
+  
+          const currentLang = ref(localStorage.getItem("lang") || "EN");
+  
+          const t = (key) => translations[currentLang.value][key] || key;
+  
+          const setLanguage = () => {
+            currentLang.value = currentLang.value == 'EN'? 'AR' : 'EN';
+            localStorage.setItem("lang", currentLang.value);
+          };
+  
+          return { currentLang, t, setLanguage };
+        }
+      }).mount("#app");
+    </script>
+  
   </body>
 </html>

@@ -5,6 +5,14 @@
 .navbar-toggler:focus {
   box-shadow: none;
 }
+.lg {
+  background-color: rgb(248 249 250);
+    border: none;
+}
+.lg a {
+  color: #068515;
+  text-decoration: none;
+}
 
 /* start flag design  */
 .flag {
@@ -92,13 +100,6 @@
   text-align: left;
   color: #30c108;
 }
-.footer {
-  background-color: rgba(182, 182, 182, 0.425);
-}
-.foot {
-  background-color: rgb(182, 182, 182);
-}
-
 /* start map  */
 .map {
   position: relative;
@@ -110,12 +111,19 @@
   top: 43%;
   left: 5%;
 }
-.map h1 {
+.map h1:first-of-type {
   font-size: 120px;
   font-weight: 900;
   position: absolute;
   top: 20%;
   left: 35%;
+}
+.map h1:last-of-type {
+  font-size: 23px;
+    font-weight: 900;
+    position: absolute;
+    bottom: -106%;
+    left: 72%;
 }
 .map h2:first-of-type {
   font-size: 35px;
@@ -133,28 +141,66 @@
   left: 39%;
 }
 /* start bar  */
-.bar {
+.baren {
+  position: relative;
+  height: 100px;
+  padding-top: 30px;
+}
+.baren div {
   overflow: hidden;
   background-color: #bdf0a1;
 }
-.bar::before {
+.baren div::before {
   content: "";
   position: absolute;
-  bottom: 28%;
-  left: 4%;
-  height: 40px;
-  width: 379px;
+  bottom: 22%;
+    left: 1%;
+    height: 50%;
+    width: 98%;
   background-color: #08c11e;
   z-index: -1;
   transform: rotate(176deg);
 }
-.bar p {
+
+.baren p {
   margin: 0;
   padding: 10px;
   margin-left: 377px;
   width: 555px;
   font-weight: 800;
-  animation-name: text1;
+  animation-name: text1en;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.barar {
+  position: relative;
+  height: 100px;
+  padding-top: 30px;
+}
+.barar div {
+  overflow: hidden;
+  background-color: #bdf0a1;
+}
+.barar div::before {
+  content: "";
+  position: absolute;
+  bottom: 22%;
+    left: 1%;
+    height: 50%;
+    width: 98%;
+  background-color: #08c11e;
+  z-index: -1;
+  transform: rotate(176deg);
+}
+
+.barar p {
+  margin: 0;
+  padding: 10px;
+  margin-left: 377px;
+  width: 555px;
+  font-weight: 800;
+  animation-name: text1ar;
   animation-duration: 15s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -183,7 +229,7 @@
   }
 }
 
-@keyframes text1 {
+@keyframes text1en {
   0% {
     margin-left: 377px;
   }
@@ -192,13 +238,22 @@
     margin-left: -544px;
   }
 }
+@keyframes text1ar {
+  0% {
+    margin-left: -444px;
+  }
+
+  100% {
+    margin-left: 300px;
+  }
+}
 /*history*/
 .timeline {
-  width: 400px;
   margin: 20px auto;
   position: relative;
-  padding-left: 0px;
-  border-left: 2px solid #00ff22;
+  margin: 20px auto;
+  padding-left: 25px;
+  border-left: 2px solid #08c108;
 }
 .nn {
   display: flex;
@@ -208,11 +263,43 @@
   background: white;
   padding: 10px;
   margin: 10px 0;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(12, 253, 72, 0.952);
+  border-radius: 10px;
+    box-shadow: 1px 1px 11px 0px #a1a3a1;
   position: relative;
 }
 .date {
   font-weight: bold;
-  color: #1eff005e;
+  color: #08c108;
+}
+.carousel {
+  box-shadow: 6px 5px 11px 3px #626560;
+}
+
+.footer {
+  background-color: #071d00de;
+  color: #fff;
+  height: 120px;
+  border-radius: 25px 25px 0px 0px;
+  -webkit-border-radius: 25px 25px 0px 0px;
+  -moz-border-radius: 25px 25px 0px 0px;
+  -ms-border-radius: 25px 25px 0px 0px;
+  -o-border-radius: 25px 25px 0px 0px;
+}
+.footer p {
+  color: #c5e2c2;
+  font-weight: 500;
+}
+.footer h5 {
+  color: #c5e2c2;
+  margin-bottom: 10px;
+}
+.footer .links {
+  margin-bottom: 10px;
+}
+.footer .links i {
+  margin-left: 30px;
+  font-size: 20px;
+}
+.footer .links span:last-of-type i {
+  color: #ff182bde;
 }
