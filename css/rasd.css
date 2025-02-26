@@ -2,11 +2,15 @@
   padding: 0;
   border: none;
 }
+#n {
+  background-color: #d2dfd2;
+  margin-bottom: 0;
+}
 .navbar-toggler:focus {
   box-shadow: none;
 }
 .lg {
-  background-color: rgb(248 249 250);
+  background-color: #d2dfd2;
     border: none;
 }
 .lg a {
@@ -14,7 +18,7 @@
   text-decoration: none;
 }
 
-/* start flag design  */
+/* start flag design bg-body-tertiary */
 .flag {
   width: 100%;
   height: 50px;
@@ -76,6 +80,7 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-delay: 2s;
+  margin-top: 0;
 }
 
 /* start info  */

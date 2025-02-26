@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   </head>
   <body id="app">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav id="n"  class="navbar navbar-expand-lg  fixed-top">
       <div class="container-fluid">
         <h1 style="margin: 0">
           <span style="color: black">R</span><span style="color: red">A</span
@@ -37,8 +37,7 @@
       <div class="content container pt-5 text-center">
         <h2 style="color: #08c108">{{ t('welcomeh') }}</h2>
         <p style="color: #7f7f7f">
-          this website contain quick information about Western sahara, we hope
-          you enjoy it
+          {{t('welcomeP')}}
         </p>
         <div class="map col-lg-6">
           <img src="imgs/map1.png" alt="" />
@@ -64,53 +63,53 @@
       </div>
     </div>
     <div class="info container pt-5 text-center" id="info">
-      <h2 style="color: #08c108">معلومات عامة</h2>
+      <h2 style="color: #08c108">{{t('info')}}</h2>
       <div class="row mt-3 col-lg-6">
         <div class="col-sm-6 mb-3 mb-sm-0">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">المساحة</h5>
-              <p class="card-text">266,000 كم²</p>
+              <h5 class="card-title">{{t('area')}}</h5>
+              <p class="card-text">266,000 ² {{t('km')}}</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6 mb-3 mb-sm-0">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">العاصمة</h5>
-              <p class="card-text">العيون</p>
+              <h5 class="card-title">{{t('capital')}}</h5>
+              <p class="card-text">{{t('aaiun')}}</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6 mb-3 mb-sm-0">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">الموقع الجغرافي</h5>
-              <p class="card-text">شمال غرب إفريقيا</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">عدد السكان</h5>
-              <p class="card-text">607292 نسمة</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">اللغة</h5>
-              <p class="card-text">العربية</p>
+              <h5 class="card-title">{{t('Geographicallocation')}}</h5>
+              <p class="card-text">{{t('NorthwestAfrica')}}</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">الرئيس الحالي</h5>
-              <p class="card-text">إبراهيم غالي</p>
+              <h5 class="card-title">{{t('CurrentPresident')}}</h5>
+              <p class="card-text">{{t('IbrahimGhali')}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{t('Population')}}</h5>
+              <p class="card-text">607292 {{t('nasama')}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{t('Language')}}</h5>
+              <p class="card-text">{{t('Arabic')}}</p>
             </div>
           </div>
         </div>
@@ -118,42 +117,42 @@
       <div class="card mb-3 col-lg-6">
         <img src="imgs/Western_sahara.png" class="card-img-top" alt="" />
         <div class="card-body">
-          <p class="card-text">Western sahara walls map</p>
+          <p class="card-text"> {{t('walls')}}</p>
         </div>
       </div>
     </div>
     <div class="history container pt-5 text-center" id="history">
-      <h2 style="color: #08c108">History</h2>
+      <h2 style="color: #08c108">{{t('History')}}</h2>
       <div class="timeline row">
       <div class="nn col-sm-12">
         <div class="c">
           <span class="date">1884</span>
-          <p><strong>الاستعمار الإسباني للصحراء الغربية</strong><br>في أواخر القرن التاسع عشر، فرضت إسبانيا سيطرتها على المنطقة كجزء من تقسيم القوى الاستعمارية لإفريقيا في مؤتمر برلين (1884-1885).</p>
+          <p><strong>{{t('ds1')}}</strong><br> {{t('s1')}} </p>
       </div>
       </div>
       <div class="nn col-sm-12">
         <div  class="c">
           <span class="date">1973</span>
-          <p><strong>جبهة تحرير الساقية الحمراء ووادي الذهب</strong><br> بعد الحرب العالمية الثانية، بدأ السكان في المطالبة بالاستقلال، حيث تم تأسيس جبهة  تحرير الساقية الحمراء ووادي الذهب (البوليساريو) 10 ماي عام 1973، التي طالبت بإنهاء الاستعمار</p>
+          <p><strong>{{t('ds2')}}</strong><br> {{t('s2')}}</p>
       </div>
       </div>
       <div class="nn col-sm-12">
         
         <div class="c">
           <span class="date">1976</span>
-          <p><strong>تأسيس الجمهورية العربية الصحراوية الديمقراطية</strong> <br>بعد انسحاب إسبانيا، وقع المغرب وموريتانيا اتفاق مدريد، حيث تقاسم المغرب وموريتانيا المنطقة، لكن جبهة البوليساريو رفضت ذلك وأعلنت قيام الجمهورية العربية الصحراوية الديمقراطية (RASD) في 27 فبراير 1976</p>
+          <p><strong>{{t('ds3')}}</strong><br>{{t('s3')}}</p>
       </div>
       </div>
       <div class="nn col-sm-12">
         <div class="c">
           <span class="date">1991-1976</span>
-          <p><strong>الصراع المغربي الصحراوي</strong><br>دخل المغرب وجبهة البوليساريو في حرب استمرت حتى 1991، عندما تم توقيع وقف إطلاق النار بوساطة الأمم المتحدة</p>
-        </div>
+          <p><strong>{{t('ds4')}}</strong><br>{{t('s4')}}</p>
       </div>
+    </div>
       <div class="nn col-sm-12">
         <div class="c">
           <span class="date">2025</span>
-          <p><strong>الوضع الحالي</strong><br> أصدر زعيم جبهة البوليساريو، إبراهيم غالي، مرسوما يقضي بإنهاء الالتزام باتفاق وقف إطلاق النار الموقع عام 1991 مع المغرب في نوفمبر من سنة 2020 مما أدى الى عودة المواجهة العسكرية بين المغرب والصحراء الغربية والان بعد مرور ما يقارب الخمس سنوات لا يزال الشعب الصحراوي  يلجأ للكفاح المسلح كخيار استراتيجي لمواجهة تعنت جيش الاحتلال المغربي الذي لم يلتزم بقرارات الشرعية الدولية والأممية خلال العقود الثلاثة الأخيرة والتي نصّت على وجوب تمكين شعب الصحراء الغربية من تقرير المصير عبر استفتاء حرّ وعادل ونزيه بإشراف من الأمم المتحدة. </p>
+          <p><strong>{{t('ds5')}}</strong><br>{{t('s5')}}</p>
         </div>
       </div>
     </div>
@@ -161,7 +160,7 @@
     
       
     <div class="pic container pt-5 text-center" id="pic">
-      <h2 style="color: #08c108">Pictures</h2>
+      <h2 style="color: #08c108">{{t('Pictures')}}</h2>
 
 
       <div class="album mt-5 mb-5">
@@ -506,10 +505,65 @@
         setup() {
           const translations = {
             EN: { 
-              welcomeh: "Western sahara" 
+              welcomeh: "Western sahara" ,
+              welcomeP: "this website contain quick information about Western sahara, we hope you enjoy it",
+              info: "General information",
+              area: "Area",
+              km: "Km",
+              capital:"Capital",
+              aaiun:"Aaiun",
+              NorthwestAfrica: "Northwest Africa",
+              Geographicallocation:"Geographical location",
+              nasama:"inhabitants",
+              CurrentPresident:"Current President",
+              IbrahimGhali:"Ibrahim Ghali",
+              Language:"Language",
+              Arabic:"Arabic",
+              Population:"Population",
+              walls :"Western sahara walls map",
+              History:"History",
+              ds1:"Spanish colonization of Western Sahara",
+              ds2:"Establishment of The Polisario (Frente Polisario)",
+              ds3:"Establishment of the Sahrawi Arab Democratic Republic",
+              ds4:"Moroccan-Sahrawi Conflict",
+              ds5:"Current Situation",
+              s1:"In the late 19th century, Spain imposed its control over the region as part of the colonial powers' division of Africa at the Berlin Conference",
+              s2:"After World War II, the population began demanding independence, leading to the establishment of the Polisario Front (Frente Polisario) on May 10, 1973, which called for decolonization.",
+              s3:"After Spain's withdrawal, Morocco and Mauritania signed the Madrid Agreement, dividing the region between them. However, the Polisario Front rejected this and declared the Sahrawi Arab Democratic Republic (SADR) on February 27, 1976.",
+              s4:"After Mauritania's withdrawal in 1979 Morocco and the Polisario Front engaged in a war that lasted until 1991, when a ceasefire was signed under UN mediation.",
+              s5:"The leader of the Polisario Front, Ibrahim Ghali, issued a decree in November 2020 ending the commitment to the 1991 ceasefire agreement with Morocco. This led to the resumption of military confrontation between Morocco and Western Sahara. Now, nearly five years later, the Sahrawi people continue to resort to armed struggle as a strategic option to confront the intransigence of the Moroccan occupation army, which has failed to comply with international and UN resolutions over the past three decades. These resolutions mandate granting the people of Western Sahara the right to self-determination through a free, fair, and transparent referendum under the supervision of the United Nations.",
+              Pictures:"Images from Our Culture"
+              
             },
             AR: { 
-              welcomeh: "الصحراء الغربية" 
+              welcomeh: "الصحراء الغربية" ,
+              welcomeP: "هذا الموقع يحتوي على معلومات سريعة عن الصحراء الغربية. نأمل أن تعجبك",
+              info: "معلومات عامة",
+              area: "المساحة",
+              km: "كم",
+              capital:"العاصمة",
+              aaiun:"العيون",
+              NorthwestAfrica: "شمال غرب إفريقيا",
+              Geographicallocation:"الموقع الجغرافي",
+              nasama:"نسمة",
+              Population:"عدد السكان",
+              CurrentPresident:"الرئيس الحالي",
+              IbrahimGhali:"إبراهيم غالي",
+              Language:"اللغة",
+              Arabic:"العربية",
+              walls :"خريطة الجدار العازل في الصحراء الغربية",
+              History:"التاريخ",
+              ds1:"الاستعمار الإسباني للصحراء الغربية",
+              ds2:"تأسيس جبهة تحرير الساقية الحمراء ووادي الذهب",
+              ds3:"تأسيس الجمهورية العربية الصحراوية الديمقراطية",
+              ds4:"الصراع المغربي الصحراوي",
+              ds5:"الوضع الحالي",
+              s1:"في أواخر القرن التاسع عشر، فرضت إسبانيا سيطرتها على المنطقة كجزء من تقسيم القوى الاستعمارية لإفريقيا في مؤتمر برلين",
+              s2:"بعد الحرب العالمية الثانية، بدأ السكان في المطالبة بالاستقلال، حيث تم تأسيس جبهة  تحرير الساقية الحمراء ووادي الذهب (البوليساريو) 10 ماي عام 1973، التي طالبت بإنهاء الاستعمار",
+              s3:" بعد انسحاب إسبانيا، وقع المغرب وموريتانيا اتفاق مدريد، حيث تقاسم المغرب وموريتانيا المنطقة، لكن جبهة البوليساريو رفضت ذلك وأعلنت قيام الجمهورية العربية  الديمقراطية (RASD) في 27 فبراير 1976",
+              s4:" بعد انسيحاب موريتانيا في 1979 دخل المغرب وجبهة البوليساريو في حرب استمرت حتى 1991، عندما تم توقيع وقف إطلاق النار بوساطة الأمم المتحدة",
+              s5:"أصدر زعيم جبهة البوليساريو، إبراهيم غالي، مرسوما يقضي بإنهاء الالتزام باتفاق وقف إطلاق النار الموقع عام 1991 مع المغرب في نوفمبر من سنة 2020 مما أدى الى عودة المواجهة العسكرية بين المغرب والصحراء الغربية والان بعد مرور ما يقارب الخمس سنوات لا يزال الشعب الصحراوي  يلجأ للكفاح المسلح كخيار استراتيجي لمواجهة تعنت جيش الاحتلال المغربي الذي لم يلتزم بقرارات الشرعية الدولية والأممية خلال العقود الثلاثة الأخيرة والتي نصّت على وجوب تمكين شعب الصحراء الغربية من تقرير المصير عبر استفتاء حرّ وعادل ونزيه بإشراف من الأمم المتحدة. "
+               ,Pictures:"صور من ثقافتنا"
             }
           };
   
